@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
-
-type Product = {
-  name: string;
-  age: number;
-}
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import ProductInterface from "./types/Product";
 
 const App: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>();
+  const [products, setProducts] = useState<ProductInterface[]>();
 
-  const getProducts = () => {
-    fetch('/api/products').then(res => res.json()).then(setProducts);
-  }
+  const getProducts = (): void => {
+    fetch("/api/products")
+      .then((res) => res.json())
+      .then(setProducts);
+  };
 
-  return (
-    <div className="App">
+  useEffect((): void => {
+    getProducts();
+  }, []);
 
-    </div>
-  );
+  return <div className="App"></div>;
 };
 
 export default App;
