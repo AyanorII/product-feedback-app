@@ -1,7 +1,8 @@
-import { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
 
-const productSchemaDef = {
-  id: Number,
+const Schema = mongoose.Schema;
+
+const productSchema = new Schema({
   title: String,
   category: String,
   upvotes: Number,
@@ -18,8 +19,8 @@ const productSchemaDef = {
       },
     },
   ],
-};
+});
 
-const productSchema = new Schema(productSchemaDef);
+const Product = mongoose.model("Product", productSchema);
 
-export default model("Product", productSchema);
+module.exports = Product;
