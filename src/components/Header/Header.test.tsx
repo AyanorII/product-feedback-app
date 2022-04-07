@@ -1,16 +1,16 @@
 import React from "react";
+import Header from "./Header";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./styles/theme";
+import { theme } from "../../styles/theme";
 import { BrowserRouter as Router } from "react-router-dom";
 
-describe("App", () => {
-  it("renders without crashing", () => {
+describe("Header", () => {
+  it("should render properly", () => {
     render(
       <ThemeProvider theme={theme}>
         <Router>
-          <App />
+          <Header />
         </Router>
       </ThemeProvider>
     );

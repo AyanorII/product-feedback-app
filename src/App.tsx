@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Header from "./components/Header/Header";
+import GlobalStyle from "./styles/GlobalStyle";
 import ProductInterface from "./types/Product";
 
 const App: React.FC = () => {
@@ -15,7 +17,12 @@ const App: React.FC = () => {
     getProducts();
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <GlobalStyle />
+      <Header />
+    </div>
+  );
 };
 
 export default App;
