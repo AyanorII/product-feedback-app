@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import toCamelCase from "../../helpers/toCamelCase";
 
 type Props = {
   children: string;
@@ -19,7 +18,7 @@ const SortByOption = ({ children, name, value }: Props) => {
 
 export default SortByOption;
 
-const StyledOption = styled.div`
+const StyledOption = styled.li`
   position: relative;
   width: 100%;
   padding-block: 1.25rem;

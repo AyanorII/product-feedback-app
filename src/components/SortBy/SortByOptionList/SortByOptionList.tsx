@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "../Card/Card";
-import SortByOption from "./SortByOption";
-import toCamelCase from "../../helpers/toCamelCase";
+import Card from "../../Card/Card";
+import SortByOption from "../SortByOption";
+import toCamelCase from "../../../helpers/toCamelCase";
 
 type Props = {
   isDropdownVisible: boolean;
@@ -14,7 +14,7 @@ export interface SortByInterface {
   leastComments: boolean;
 }
 
-const filters = [
+export const filters = [
   "Most Upvotes",
   "Least Upvotes",
   "Most Comments",
@@ -24,9 +24,9 @@ const filters = [
 const SortByOptionList = ({ isDropdownVisible }: Props) => {
   return (
     <StyledCard isDropdownVisible={isDropdownVisible}>
-      <StyledList>
+      <StyledList isDropdownVisible={isDropdownVisible}>
         {filters.map((filter) => (
-          <SortByOption name={toCamelCase(filter)} value={toCamelCase(filter)}>
+          <SortByOption key={filter} name={toCamelCase(filter)} value={toCamelCase(filter)}>
             {filter}
           </SortByOption>
         ))}
@@ -45,11 +45,14 @@ const StyledCard = styled(Card)<Props>`
   padding: ${props => props.isDropdownVisible ? "2rem" : "0"};
   overflow: hidden;
   transition: all 0.25s;
-`;
+  opacity: ${props => props.isDropdownVisible ? 1 : 0};
+  `;
 
-const StyledList = styled.ul`
+const StyledList = styled.ul<Props>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: ${(props) => (props.isDropdownVisible ? "150px" : "0px")};
+  transition: all 0.25s;
 `;

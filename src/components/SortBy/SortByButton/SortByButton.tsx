@@ -12,9 +12,9 @@ const SortByButton = ({ isDropdownVisible, toggleDropdown }: Props) => {
       isDropdownVisible={isDropdownVisible}
       onClick={toggleDropdown}
     >
-      Sort by : <StyledSpan>Most Upvotes</StyledSpan>
+      Sort by : <StyledSpan data-testid="filter">Most Upvotes</StyledSpan>
       <Arrow
-        src={require("../../assets/shared/icon-arrow-down.svg")}
+        src={require("../../../assets/shared/icon-arrow-down.svg")}
         isDropdownVisible={isDropdownVisible}
       />
     </StyledButton>

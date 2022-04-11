@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import SortByButton from "./SortByButton";
-import SortByOptionList, { SortByInterface } from "./SortByOptionList"
-import styled from 'styled-components';
+import SortByButton from "./SortByButton/SortByButton";
+import SortByOptionList, {
+  SortByInterface,
+} from "./SortByOptionList/SortByOptionList";
+import styled from "styled-components";
 
 type Props = {};
 
@@ -25,7 +27,7 @@ const SortBy = (props: Props) => {
         isDropdownVisible={isDropdownVisible}
         toggleDropdown={toggleDropdown}
       />
-      <SortByOptionList isDropdownVisible={isDropdownVisible}/>
+      <SortByOptionList isDropdownVisible={isDropdownVisible} />
     </Wrapper>
   );
 };
@@ -33,5 +35,5 @@ const SortBy = (props: Props) => {
 export default SortBy;
 
 const Wrapper = styled.div`
-  position: relative
+  position: relative;
 `;
