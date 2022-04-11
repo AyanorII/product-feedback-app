@@ -1,11 +1,11 @@
 interface Theme {
   colors: {
     primary: string;
-    secondary: string;
-    tertiary: {
+    secondary: {
       light: string;
       dark: string;
     };
+    tertiary: string;
     grey: {
       light: string;
       medium: string;
@@ -22,11 +22,11 @@ interface Theme {
 export const theme: Theme = {
   colors: {
     primary: "#AD1FEA",
-    secondary: "#F49F85",
-    tertiary: {
+    secondary: {
       light: "#62BCFA",
       dark: "#4661E6",
     },
+    tertiary: "#F49F85",
     grey: {
       light: "#647196",
       medium: "#3A4374",
