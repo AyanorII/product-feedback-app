@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ProductInterface from "../../../interfaces/ProductInterface";
+import toCamelCase from "../../../helpers/toCamelCase";
 
 type Status = "Planned" | "In-Progress" | "Completed";
 
@@ -21,16 +22,6 @@ interface StatusCount {
   completed: number;
 }
 
-export const toCamelCase = (str: string): string => {
-  const strArr = str.split("-");
-  const camelCaseStr = strArr.map((item, index) => {
-    if (index === 0) {
-      return item.toLowerCase();
-    }
-    return item[0].toUpperCase() + item.slice(1);
-  });
-  return camelCaseStr.join("");
-};
 
 const RoadMapCardStatus = () => {
   const [statusItemsCount, setStatusItemsCount] = useState({
