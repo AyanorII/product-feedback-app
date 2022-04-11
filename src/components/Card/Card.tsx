@@ -3,11 +3,12 @@ import styled from 'styled-components';
 
 type Props = {
   children: JSX.Element
+  className?: string
 }
 
-const Card = ({children}: Props) => {
+const Card = ({children, className}: Props) => {
   return (
-    <StyledCard>{children}</StyledCard>
+    <StyledCard className={className}>{children}</StyledCard>
   )
 }
 
