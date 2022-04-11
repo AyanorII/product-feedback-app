@@ -32,9 +32,10 @@ const StyledNav = styled.nav<Props>`
   flex-direction: column;
   align-items: stretch;
   gap: 1.5rem;
+  z-index: 10;
 
   @media (min-width: 768px) {
     position: relative;
-    transform: translateX(0)
+    transform: translateX(0);
   }
 `;
