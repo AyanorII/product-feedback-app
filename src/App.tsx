@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "./components/Header/Header";
+import Top from "./components/Top/Top";
 import GlobalStyle from "./styles/GlobalStyle";
 import ProductInterface from "./types/Product";
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
     <div className="App">
       <GlobalStyle />
       <Header />
+      <Top />
     </div>
   );
 };
