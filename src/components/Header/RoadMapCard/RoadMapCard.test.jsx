@@ -2,12 +2,9 @@ import React from "react";
 import { screen, render } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-import { StatusEnum } from "./RoadMapCard";
-import RoadMapCardStatus, {
-  toCamelCase,
-  statusList,
-} from "./RoadMapCardStatus";
+import RoadMapCardStatus, { statusList } from "./RoadMapCardStatus";
 import { BrowserRouter as Router } from "react-router-dom";
+import toCamelCase from "../../../helpers/toCamelCase"
 
 describe("RoadMapCard", () => {
   it("should render the correct statuses", () => {
@@ -36,11 +33,11 @@ describe("RoadMapCard", () => {
       </ThemeProvider>
     );
 
-    const counts = screen.getAllByTestId("count")
+    const counts = screen.getAllByTestId("count");
 
-    expect(counts.length).toBe(3)
-    expect(counts.every((count) => count.innerHTML === "0")).toBe(true)
-  })
+    expect(counts.length).toBe(3);
+    expect(counts.every((count) => count.innerHTML === "0")).toBe(true);
+  });
 });
 
 describe("toCamelCase", () => {
