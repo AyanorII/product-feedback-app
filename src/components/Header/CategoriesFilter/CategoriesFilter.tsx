@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../../Button/Button";
 import Card from "../../Card/Card";
 import { CategoriesEnum } from "../../../interfaces/CategoriesEnum";
+import Tag from "../../Tag/Tag";
 
 type Props = {};
 
@@ -14,7 +14,7 @@ const CategoriesFilter = (props: Props) => {
           {Object.values(CategoriesEnum).map((category) => {
             return (
               <li key={category}>
-                <Button>{category}</Button>
+                <Tag>{category}</Tag>
               </li>
             );
           })}
